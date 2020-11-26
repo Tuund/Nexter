@@ -149,8 +149,20 @@ body {
   font-style: italic; }
 
 .homes {
-  grid-column: center-start / center-end;
-  background-color: #101d2c; }
+  display: grid;
+  margin: 15rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 7rem;
+  grid-column: center-start / center-end; }
+
+.home {
+  background-color: #f9f7f6; }
+  .home__img {
+    width: 100%; }
+  .home__location svg, .home__room svg, .home__area svg, .home__price svg {
+    width: 2rem;
+    height: 2rem;
+    fill: #c69963; }
 
 .gallery {
   grid-column: full-start / full-end;
