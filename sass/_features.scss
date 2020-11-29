@@ -1,19 +1,30 @@
 .features {
-  display: grid;
-  //grid-template-columns: repeat(3, 1fr);
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  gap: 6rem;
-  align-items: start;
-
   grid-column: center-start / center-end;
   margin: 15rem 0;
+
+  @supports (display: grid) {
+    display: grid;
+    //grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 6rem;
+    align-items: start;
+  }
 }
 
 .feature {
+  float: left;
+  width: 33.33333333%;
+  margin-bottom: 6rem;
+
   display: grid;
   grid-template-columns: min-content 1fr;
   column-gap: 2.5rem;
   row-gap: 1.5rem;
+
+  @supports (display: grid) {
+    width: auto;
+    margin-bottom: 0;
+  }
 
   &__icon {
     grid-row: 1 / span 2;
